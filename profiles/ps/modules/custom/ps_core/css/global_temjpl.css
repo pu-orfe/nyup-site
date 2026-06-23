@@ -1,0 +1,11 @@
+/*
+ Hide the username span that's output in footer. It's only
+ needed for some JavaScript and not meant to be shown visually.
+ */
+#ps-current-username {
+  display: none;
+}
+
+.toolbar-bar .toolbar-icon-announcements::before {
+  background-image: url("../icons/noun-announcement-3368315-BEBEBE-cropped.svg");
+}

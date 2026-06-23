@@ -1,0 +1,19 @@
+/* Alert item */
+.alert-item {
+  background-color: black;
+  color: white;
+  padding: 1em 5em;
+}
+
+/* Close Alert link */
+.close-alert {
+  border-radius: 50%;
+  width: 1em;
+  height: 1em;
+  background-color: orange;
+  text-align: center;
+  float: right;
+  overflow: visible;
+  margin: 0 1em 1em 1em;
+  text-decoration: none;
+}

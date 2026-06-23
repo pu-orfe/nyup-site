@@ -1,0 +1,104 @@
+/* roboto-300 - cyrillic_cyrillic-ext_greek_greek-ext_latin_latin-ext */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 300;
+  src: url('roboto/roboto-v30-cyrillic_cyrillic-ext_greek_greek-ext_latin_latin-ext-300.eot'); /* IE9 Compat Modes */
+  src: url('roboto/roboto-v30-cyrillic_cyrillic-ext_greek_greek-ext_latin_latin-ext-300.eot') format('embedded-opentype'), /* IE6-IE8 */
+       url('roboto/roboto-v30-cyrillic_cyrillic-ext_greek_greek-ext_latin_latin-ext-300.woff2') format('woff2'), /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+       url('roboto/roboto-v30-cyrillic_cyrillic-ext_greek_greek-ext_latin_latin-ext-300.woff') format('woff'), /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+, iOS 5+ */
+       url('roboto/roboto-v30-cyrillic_cyrillic-ext_greek_greek-ext_latin_latin-ext-300.ttf') format('truetype'), /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
+       url('roboto/roboto-v30-cyrillic_cyrillic-ext_greek_greek-ext_latin_latin-ext-300.svg') format('svg'); /* Legacy iOS */
+}
+/* roboto-300italic - cyrillic_cyrillic-ext_greek_greek-ext_latin_latin-ext */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: 300;
+  src: url('roboto/roboto-v30-cyrillic_cyrillic-ext_greek_greek-ext_latin_latin-ext-300italic.eot'); /* IE9 Compat Modes */
+  src: url('roboto/roboto-v30-cyrillic_cyrillic-ext_greek_greek-ext_latin_latin-ext-300italic.eot') format('embedded-opentype'), /* IE6-IE8 */
+       url('roboto/roboto-v30-cyrillic_cyrillic-ext_greek_greek-ext_latin_latin-ext-300italic.woff2') format('woff2'), /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+       url('roboto/roboto-v30-cyrillic_cyrillic-ext_greek_greek-ext_latin_latin-ext-300italic.woff') format('woff'), /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+, iOS 5+ */
+       url('roboto/roboto-v30-cyrillic_cyrillic-ext_greek_greek-ext_latin_latin-ext-300italic.ttf') format('truetype'), /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
+       url('roboto/roboto-v30-cyrillic_cyrillic-ext_greek_greek-ext_latin_latin-ext-300italic.svg') format('svg'); /* Legacy iOS */
+}
+/* roboto-regular - cyrillic_cyrillic-ext_greek_greek-ext_latin_latin-ext */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: url('roboto-v30-cyrillic_cyrillic-ext_greek_greek-ext_latin_latin-ext-regular.eot'); /* IE9 Compat Modes */
+  src: url('roboto/roboto-v30-cyrillic_cyrillic-ext_greek_greek-ext_latin_latin-ext-regular.eot') format('embedded-opentype'), /* IE6-IE8 */
+       url('roboto/roboto-v30-cyrillic_cyrillic-ext_greek_greek-ext_latin_latin-ext-regular.woff2') format('woff2'), /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+       url('roboto/roboto-v30-cyrillic_cyrillic-ext_greek_greek-ext_latin_latin-ext-regular.woff') format('woff'), /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+, iOS 5+ */
+       url('roboto/roboto-v30-cyrillic_cyrillic-ext_greek_greek-ext_latin_latin-ext-regular.ttf') format('truetype'), /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
+       url('roboto/roboto-v30-cyrillic_cyrillic-ext_greek_greek-ext_latin_latin-ext-regular.svg') format('svg'); /* Legacy iOS */
+}
+/* roboto-italic - cyrillic_cyrillic-ext_greek_greek-ext_latin_latin-ext */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: 400;
+  src: url('roboto/roboto-v30-cyrillic_cyrillic-ext_greek_greek-ext_latin_latin-ext-italic.eot'); /* IE9 Compat Modes */
+  src: url('roboto/roboto-v30-cyrillic_cyrillic-ext_greek_greek-ext_latin_latin-ext-italic.eot') format('embedded-opentype'), /* IE6-IE8 */
+       url('roboto/roboto-v30-cyrillic_cyrillic-ext_greek_greek-ext_latin_latin-ext-italic.woff2') format('woff2'), /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+       url('roboto/roboto-v30-cyrillic_cyrillic-ext_greek_greek-ext_latin_latin-ext-italic.woff') format('woff'), /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+, iOS 5+ */
+       url('roboto/roboto-v30-cyrillic_cyrillic-ext_greek_greek-ext_latin_latin-ext-italic.ttf') format('truetype'), /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
+       url('roboto/roboto-v30-cyrillic_cyrillic-ext_greek_greek-ext_latin_latin-ext-italic.svg') format('svg'); /* Legacy iOS */
+}
+/* roboto-500 - cyrillic_cyrillic-ext_greek_greek-ext_latin_latin-ext */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  src: url('roboto/roboto-v30-cyrillic_cyrillic-ext_greek_greek-ext_latin_latin-ext-500.eot'); /* IE9 Compat Modes */
+  src: url('roboto/roboto-v30-cyrillic_cyrillic-ext_greek_greek-ext_latin_latin-ext-500.eot') format('embedded-opentype'), /* IE6-IE8 */
+       url('roboto/roboto-v30-cyrillic_cyrillic-ext_greek_greek-ext_latin_latin-ext-500.woff2') format('woff2'), /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+       url('roboto/roboto-v30-cyrillic_cyrillic-ext_greek_greek-ext_latin_latin-ext-500.woff') format('woff'), /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+, iOS 5+ */
+       url('roboto/roboto-v30-cyrillic_cyrillic-ext_greek_greek-ext_latin_latin-ext-500.ttf') format('truetype'), /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
+       url('roboto/roboto-v30-cyrillic_cyrillic-ext_greek_greek-ext_latin_latin-ext-500.svg') format('svg'); /* Legacy iOS */
+}
+/* roboto-500italic - cyrillic_cyrillic-ext_greek_greek-ext_latin_latin-ext */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: 500;
+  src: url('roboto/roboto-v30-cyrillic_cyrillic-ext_greek_greek-ext_latin_latin-ext-500italic.eot'); /* IE9 Compat Modes */
+  src: url('roboto/roboto-v30-cyrillic_cyrillic-ext_greek_greek-ext_latin_latin-ext-500italic.eot') format('embedded-opentype'), /* IE6-IE8 */
+       url('roboto/roboto-v30-cyrillic_cyrillic-ext_greek_greek-ext_latin_latin-ext-500italic.woff2') format('woff2'), /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+       url('roboto/roboto-v30-cyrillic_cyrillic-ext_greek_greek-ext_latin_latin-ext-500italic.woff') format('woff'), /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+, iOS 5+ */
+       url('roboto/roboto-v30-cyrillic_cyrillic-ext_greek_greek-ext_latin_latin-ext-500italic.ttf') format('truetype'), /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
+       url('roboto/roboto-v30-cyrillic_cyrillic-ext_greek_greek-ext_latin_latin-ext-500italic.svg') format('svg'); /* Legacy iOS */
+}
+/* roboto-700 - cyrillic_cyrillic-ext_greek_greek-ext_latin_latin-ext */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  src: url('roboto/roboto-v30-cyrillic_cyrillic-ext_greek_greek-ext_latin_latin-ext-700.eot'); /* IE9 Compat Modes */
+  src: url('roboto/roboto-v30-cyrillic_cyrillic-ext_greek_greek-ext_latin_latin-ext-700.eot') format('embedded-opentype'), /* IE6-IE8 */
+       url('roboto/roboto-v30-cyrillic_cyrillic-ext_greek_greek-ext_latin_latin-ext-700.woff2') format('woff2'), /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+       url('roboto/roboto-v30-cyrillic_cyrillic-ext_greek_greek-ext_latin_latin-ext-700.woff') format('woff'), /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+, iOS 5+ */
+       url('roboto/roboto-v30-cyrillic_cyrillic-ext_greek_greek-ext_latin_latin-ext-700.ttf') format('truetype'), /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
+       url('roboto/roboto-v30-cyrillic_cyrillic-ext_greek_greek-ext_latin_latin-ext-700.svg') format('svg'); /* Legacy iOS */
+}
+/* roboto-700italic - cyrillic_cyrillic-ext_greek_greek-ext_latin_latin-ext */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: 700;
+  src: url('roboto/roboto-v30-cyrillic_cyrillic-ext_greek_greek-ext_latin_latin-ext-700italic.eot'); /* IE9 Compat Modes */
+  src: url('roboto/roboto-v30-cyrillic_cyrillic-ext_greek_greek-ext_latin_latin-ext-700italic.eot') format('embedded-opentype'), /* IE6-IE8 */
+       url('roboto/roboto-v30-cyrillic_cyrillic-ext_greek_greek-ext_latin_latin-ext-700italic.woff2') format('woff2'), /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+       url('roboto/roboto-v30-cyrillic_cyrillic-ext_greek_greek-ext_latin_latin-ext-700italic.woff') format('woff'), /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+, iOS 5+ */
+       url('roboto/roboto-v30-cyrillic_cyrillic-ext_greek_greek-ext_latin_latin-ext-700italic.ttf') format('truetype'), /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
+       url('roboto/roboto-v30-cyrillic_cyrillic-ext_greek_greek-ext_latin_latin-ext-700italic.svg') format('svg'); /* Legacy iOS */
+}

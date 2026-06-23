@@ -1,0 +1,82 @@
+body,
+#drupal-off-canvas-wrapper {
+  /* Overrides */
+  .aria-autocomplete__wrapper--autogrow {
+    background: transparent url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg width='22px' height='13px' viewBox='0 0 22 13' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3C!-- Generator: Sketch 60 (88103) - https://sketch.com --%3E%3Ctitle%3EPath 2%3C/title%3E%3Cdesc%3ECreated with Sketch.%3C/desc%3E%3Cg id='Page-1' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'%3E%3Cg id='Data-Landing' transform='translate(-415.000000, -873.000000)' fill='%23E77500'%3E%3Cpolygon id='Path-2' points='415 873 437 873 426 886'%3E%3C/polygon%3E%3C/g%3E%3C/g%3E%3C/svg%3E") no-repeat right .7em top 50% / 22px 13px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    max-width: 100%;
+    text-overflow: ellipsis;
+    padding: 0 40px 0 10px;
+    min-height: 38px;
+    transition: color .5s ease-in;
+    min-width: 5em;
+    &:focus-within {
+      outline-color: var(--color-focus-outline);
+      outline-offset: 1px;
+      outline-style: auto;
+      outline-width: 5px;
+    }
+    input {
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+    &::placeholder, ::placeholder {
+      color: inherit;
+      font-size: 1rem;
+      transition: color .5s ease-in;
+    }
+    .focus::placeholder {
+      color: transparent;
+      display: none;
+    }
+    &:has(.aria-autocomplete__selected) {
+      &, .aria-autocomplete__input {
+        padding-right: 10px;
+        padding-bottom: 1.5em;
+        background: var(--color-white);
+        &.disabled {
+          padding-bottom: 0;
+        }
+      }
+      &:not(:focus-within) {
+        box-shadow: 0 0 0 1px var(--color-neutral-40);
+      }
+    }
+    &:has(ul:focus-within) ::placeholder {
+      color: transparent;
+    }
+
+    .aria-autocomplete__selected {
+      background-color: var(--color-neutral-85, #606060);
+      color: var(--color-neutral-10, #fff);
+      border-radius: .25rem;
+      &:hover {
+        background-color: var(--color-neutral-60, #555);
+      }
+    }
+    .aria-autocomplete__list {
+      margin-top: -4px;
+      border-color: var(--color-neutral-40);
+      border-radius: 0;
+      min-width: max-content;
+      max-width: min(300px, 80vw);
+      font-size: 15px;
+      &::before {
+        text-align: left;
+        font-style: italic;
+        color: #111;
+        line-height: .9;
+        margin-top: .125em;
+      }
+    }
+  }
+}
+
+#drupal-off-canvas-wrapper .aria-autocomplete__wrapper--autogrow {
+  background-color: #fff;
+  &:focus-within {
+    outline-color: revert;
+  }
+}
