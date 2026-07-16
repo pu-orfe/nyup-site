@@ -1,0 +1,6 @@
+name: "CodeQL Ignore Config"
+
+paths-ignore:
+  - '**/*.js'
+  - '**/node_modules/**'
+  - '**/bower_components/**'
