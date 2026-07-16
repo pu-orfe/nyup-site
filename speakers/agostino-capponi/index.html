@@ -6,7 +6,21 @@ window.drupalSettings = window.drupalSettings || {};
 window.Drupal.t = window.Drupal.t || function(str) { return str; };
 window.bodyScrollLock = window.bodyScrollLock || { disableBodyScroll: function() {}, enableBodyScroll: function() {}, clearAllBodyScrollLocks: function() {} };
 window.smartquotes = window.smartquotes || function() {};
-window.AriaAutocomplete = window.AriaAutocomplete || function() {};</script>
+window.AriaAutocomplete = window.AriaAutocomplete || function() {};
+window.Drupal.attachBehaviors = window.Drupal.attachBehaviors || function(context, settings) {
+  context = context || document;
+  settings = settings || window.drupalSettings;
+  for (const k in window.Drupal.behaviors) {
+    if (typeof window.Drupal.behaviors[k].attach === 'function') {
+      try {
+        window.Drupal.behaviors[k].attach(context, settings);
+      } catch (e) { console.error('Error attaching behavior ' + k, e); }
+    }
+  }
+};
+document.addEventListener('DOMContentLoaded', function() {
+  window.Drupal.attachBehaviors(document, window.drupalSettings);
+});</script>
 <meta charset="utf-8"/>
 <meta content="Abstract: We study the role of virtual trading in electricity markets that consist of day-ahead (DA) markets, bids adjustment (BA) periods, and real time (RT) dispatches. Suppliers and load-serving entities engage in contracts for electricity in the DA market. They utilize the BA period to reconcile any discrepancies between the contracted quantiti" name="description"/>
 <link href="index.html" rel="canonical"/>
@@ -285,18 +299,14 @@ window.AriaAutocomplete = window.AriaAutocomplete || function() {};</script>
 <script src="../../profiles/ps/modules/custom/ps_core/js/js-cookie-3.0.5.min.js"></script>
 <script src="../../profiles/ps/modules/custom/ps_alerts/js/alerts_temjpl.js"></script>
 <script src="../../profiles/ps/themes/ps_base/js/main-menu_temjpl.js"></script>
-
-
 <script src="../../profiles/ps/modules/custom/ps_core/js/utils_temjpl.js"></script>
 <script src="../../profiles/ps/modules/custom/ps_core/js/columns_temjpl.js"></script>
 <script src="../../profiles/ps/modules/custom/ps_core/js/tables_temjpl.js"></script>
 <script src="../../profiles/ps/modules/custom/ps_core/js/content_list_a11y_enhancer_temjpl.js"></script>
 <script src="../../profiles/ps/modules/custom/ps_core/js/content_list_ajax_temjpl.js"></script>
 <script src="../../profiles/ps/modules/custom/ps_core/js/enhanced-focus_temjpl.js"></script>
-
 <script src="../../profiles/ps/modules/custom/ps_core/js/link_behavior_temjpl.js"></script>
 <script src="../../profiles/ps/modules/custom/ps_core/js/logout-link-username_temjpl.js"></script>
-
 <script src="../../profiles/ps/themes/ps_tiger/js/header_temjpl.js"></script>
 <script src="../../profiles/ps/themes/ps_tiger/js/image-no-border_temjpl.js"></script>
 </body>
