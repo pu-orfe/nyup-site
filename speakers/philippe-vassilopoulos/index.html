@@ -3,10 +3,26 @@
 <html dir="ltr" lang="en" prefix="og: https://ogp.me/ns#">
 <head><script id="drupal-static-shim">window.Drupal = window.Drupal || { behaviors: {}, locale: {} };
 window.drupalSettings = window.drupalSettings || {};
+window.drupalSettings.mathjax = window.drupalSettings.mathjax || { config: {}, config_type: '' };
+window.drupalSettings.enhanced_date = window.drupalSettings.enhanced_date || { add_to_calendar_links: false };
 window.Drupal.t = window.Drupal.t || function(str) { return str; };
 window.bodyScrollLock = window.bodyScrollLock || { disableBodyScroll: function() {}, enableBodyScroll: function() {}, clearAllBodyScrollLocks: function() {} };
 window.smartquotes = window.smartquotes || function() {};
 window.AriaAutocomplete = window.AriaAutocomplete || function() {};
+window.debounce = window.debounce || function(func, wait, immediate) {
+  let timeout;
+  return function() {
+    const context = this, args = arguments;
+    const later = function() {
+      timeout = null;
+      if (!immediate) func.apply(context, args);
+    };
+    const callNow = immediate && !timeout;
+    clearTimeout(timeout);
+    timeout = setTimeout(later, wait);
+    if (callNow) func.apply(context, args);
+  };
+};
 window.Drupal.attachBehaviors = window.Drupal.attachBehaviors || function(context, settings) {
   context = context || document;
   settings = settings || window.drupalSettings;
