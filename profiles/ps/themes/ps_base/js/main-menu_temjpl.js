@@ -16,7 +16,7 @@
       // Improve the SR label of the sub-menu toggle by prepending the name of
       // the parent menu item. For example, instead of just "Submenu", it would
       // now read "Undergraduate Submenu".
-      $(this).find('.sr-only').prepend($(this).prev().text() + ' ');
+      $(this).find('.sr-only').prepend(document.createTextNode($(this).prev().text() + ' '));
 
       // Close the submenu when escape key used and shift focus back to the
       // toggle button.

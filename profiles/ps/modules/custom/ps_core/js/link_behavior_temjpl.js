@@ -14,8 +14,8 @@
       // document system path or directly to the document file. The list of
       // file extensions matches the list that we allow for upload in Document
       // entities.
-      let documentAliasRegex = new RegExp('\/document\/[0-9]+$');
-      let directLinkRegex = new RegExp('\.(txt|doc|docx|xls|xlsx|xlsm|pdf|ppt|pptx|pps|ppsx|odt|ods|odp|dat|dta|sav|por|cls|tex)$', 'i');
+      let documentAliasRegex = new RegExp('\\/document\\/[0-9]+$');
+      let directLinkRegex = new RegExp('\\.(txt|doc|docx|xls|xlsx|xlsm|pdf|ppt|pptx|pps|ppsx|odt|ods|odp|dat|dta|sav|por|cls|tex)$', 'i');
 
       // Find all links that link to a document path and open them in a new window.
       $(once('ps-core-link-behavior', 'a', context)).each(function () {
