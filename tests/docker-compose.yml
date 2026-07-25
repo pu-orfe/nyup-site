@@ -1,0 +1,9 @@
+services:
+  js-tests:
+    build:
+      context: .
+    # The site's JavaScript is mounted rather than copied so the tests always
+    # run against the working tree.
+    volumes:
+      - ../core:/app/core:ro
+      - ../profiles:/app/profiles:ro

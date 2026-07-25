@@ -66,8 +66,12 @@
             let $dateBadge = $(this).find('.content-list-item-date-badge');
             if ($dateBadge.length) {
               if ($dateBadge.data('prepend')) {
-                let markup = '<span class="sr-only">' + $dateBadge.text() + ': </span>';
-                $(this).find('.field--name-title').prepend(markup);
+                // Insert the badge text as a text node rather than building
+                // markup from it, so the DOM text is never reinterpreted as
+                // HTML.
+                let $srOnlyLabel = $('<span class="sr-only"></span>')
+                  .append(document.createTextNode($dateBadge.text() + ': '));
+                $(this).find('.field--name-title').prepend($srOnlyLabel);
               }
             }
           }

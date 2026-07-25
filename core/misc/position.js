@@ -438,11 +438,14 @@
     const collision = (options.collision || 'flip').split(' ');
     const offsets = {};
 
-    // Make sure string options are treated as CSS selectors
+    // Make sure string options are treated as CSS selectors, and never as
+    // markup: a string is only ever passed to find(), while anything else is
+    // an element, event or jQuery object.
+    const ofOption = options.of;
     const target =
-      typeof options.of === 'string'
-        ? $(document).find(options.of)
-        : $(options.of);
+      typeof ofOption === 'string'
+        ? $(document).find(ofOption)
+        : $(ofOption);
     const dimensions = getDimensions(target);
     const targetWidth = dimensions.width;
     const targetHeight = dimensions.height;

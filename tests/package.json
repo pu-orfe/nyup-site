@@ -1,0 +1,14 @@
+{
+  "name": "nyup-site-tests",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Regression tests for the site's custom JavaScript behaviors.",
+  "type": "module",
+  "scripts": {
+    "test": "node --test"
+  },
+  "devDependencies": {
+    "jquery": "^3.7.1",
+    "jsdom": "^24.1.0"
+  }
+}
