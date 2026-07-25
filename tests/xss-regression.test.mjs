@@ -9,7 +9,7 @@
 
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { createEnvironment } from './helpers/drupal-env.mjs';
+import { createEnvironment, SITE_ORIGIN } from './helpers/drupal-env.mjs';
 
 const PAYLOAD = '<img src=x onerror="window.__xss = true">Jan 1, 2026';
 
@@ -161,7 +161,14 @@ test('random image reveals the figure and copies safe URLs', async () => {
   assert.equal(figure.classList.contains('invisible'), false);
   assert.equal(figure.hasAttribute('aria-hidden'), false);
   assert.equal(figure.hasAttribute('tabindex'), false);
-  assert.equal(image.getAttribute('src'), '/sites/default/files/photo.jpg');
+  // src carries the resolved absolute URL: only a value that parsed as http(s)
+  // is ever assigned, and the parsed result is what gets written.
+  assert.equal(
+    image.getAttribute('src'),
+    `${SITE_ORIGIN}sites/default/files/photo.jpg`,
+  );
+  // srcset keeps its original relative candidates, since rewriting a whole
+  // candidate list would change which image the browser picks.
   assert.equal(
     image.getAttribute('srcset'),
     '/sites/default/files/photo.jpg 1x, /files/photo2x.jpg 2x',
@@ -173,6 +180,29 @@ test('random image accepts absolute http(s) URLs', async () => {
     'data-src': 'https://example.com/photo.jpg',
   });
   assert.equal(image.getAttribute('src'), 'https://example.com/photo.jpg');
+});
+
+test('random image accepts a document-relative path', async () => {
+  const { image } = await attachRandomImage({ 'data-src': 'photo.jpg' });
+  assert.equal(image.getAttribute('src'), `${SITE_ORIGIN}photo.jpg`);
+});
+
+test('random image accepts a protocol-relative URL and a port', async () => {
+  const protocolRelative = await attachRandomImage({
+    'data-src': '//cdn.example.com/photo.jpg',
+  });
+  assert.equal(
+    protocolRelative.image.getAttribute('src'),
+    'https://cdn.example.com/photo.jpg',
+  );
+
+  const withPort = await attachRandomImage({
+    'data-src': 'https://cdn.example.com:8443/photo.jpg',
+  });
+  assert.equal(
+    withPort.image.getAttribute('src'),
+    'https://cdn.example.com:8443/photo.jpg',
+  );
 });
 
 const REJECTED_URLS = [
