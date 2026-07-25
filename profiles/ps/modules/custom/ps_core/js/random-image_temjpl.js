@@ -7,31 +7,40 @@
   'use strict';
 
   /**
-   * Validates a lazy-loading image URL read from a data attribute.
+   * Resolves a lazy-loading image URL read from a data attribute.
    *
-   * Only URLs without a scheme (relative paths) or with an http/https scheme
-   * are allowed, so values such as "javascript:" or "data:" can never reach a
-   * src or srcset attribute.
+   * The URL is parsed so that only http and https URLs are ever assigned, and
+   * every other scheme (javascript:, data:, vbscript:, ...) is rejected.
+   * Parsing also normalises away the whitespace and control characters that
+   * browsers ignore when reading a scheme, so a scheme with a tab or newline
+   * inside it cannot slip past.
    *
    * @param {string} url
-   *   The candidate URL.
+   *   The candidate URL, absolute or relative to the current document.
    *
-   * @return {boolean}
-   *   TRUE when the URL is safe to assign.
+   * @return {?string}
+   *   The resolved absolute URL, or null when it is not safe to assign.
    */
-  function isValidImageUrl(url) {
-    // Browsers ignore ASCII whitespace and control characters when parsing a
-    // scheme, so strip them before checking for one.
-    const normalized = url.replace(/[\u0000-\u0020]/g, '');
-    const scheme = /^([a-z][a-z0-9+.-]*):/i.exec(normalized);
-    return !scheme || /^https?$/i.test(scheme[1]);
+  function resolveImageUrl(url) {
+    let parsed;
+    try {
+      parsed = new URL(url, window.location.href);
+    }
+    catch (e) {
+      // Not a URL we can make sense of, so refuse to assign it.
+      return null;
+    }
+    if (parsed.protocol !== 'http:' && parsed.protocol !== 'https:') {
+      return null;
+    }
+    return parsed.href;
   }
 
   /**
    * Validates a lazy-loading srcset value read from a data attribute.
    *
-   * Each comma separated candidate is checked whole, descriptor included, so
-   * that a scheme split across whitespace cannot hide from the URL check.
+   * Each comma separated candidate is resolved whole, descriptor included, so
+   * that a scheme split across whitespace cannot hide from the check.
    *
    * @param {string} srcSet
    *   The candidate srcset, a comma separated list of URL/descriptor pairs.
@@ -41,7 +50,7 @@
    */
   function isValidImageSrcSet(srcSet) {
     return srcSet.split(',').every(function (candidate) {
-      return isValidImageUrl(candidate);
+      return resolveImageUrl(candidate) !== null;
     });
   }
 
@@ -60,8 +69,11 @@
             let $image = $('img', this);
             if ($image.length) {
               const dataSrc = $($image).attr('data-src');
-              if (dataSrc && isValidImageUrl(dataSrc)) {
-                $($image).attr('src', dataSrc)
+              // Assign the resolved URL rather than the raw attribute value,
+              // so only a URL that parsed as http(s) can reach src.
+              const resolvedSrc = dataSrc ? resolveImageUrl(dataSrc) : null;
+              if (resolvedSrc) {
+                $($image).attr('src', resolvedSrc)
               }
               const dataSrcSet = $($image).attr('data-srcset');
               if (dataSrcSet && isValidImageSrcSet(dataSrcSet)) {

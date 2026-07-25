@@ -20,6 +20,13 @@ const repoRoot = path.resolve(
 );
 
 /**
+ * The origin the test documents are served from.
+ *
+ * @type {string}
+ */
+export const SITE_ORIGIN = 'https://nyup.orfe.princeton.edu/';
+
+/**
  * Resolves a repository-relative path.
  *
  * @param {string} relativePath
@@ -45,6 +52,9 @@ export function createEnvironment(bodyHtml = '') {
   const dom = new JSDOM(`<!DOCTYPE html><html><body>${bodyHtml}</body></html>`, {
     runScripts: 'outside-only',
     pretendToBeVisual: true,
+    // A real origin is required: behaviors resolve relative URLs against
+    // window.location, and jsdom's default of about:blank is not a valid base.
+    url: SITE_ORIGIN,
   });
   const { window } = dom;
   const $ = jQueryFactory(window);
